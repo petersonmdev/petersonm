@@ -60,7 +60,7 @@
             <li class="d-flex">
               <!-- <a href="#" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer">Peterson Macedo &copy;</a> -->
               <a href="mailto:contato@petersonmacedo.com.br" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer">
-                contato2@petersonmacedo.com.br
+                contato@petersonmacedo.com.br
               </a>
             </li>
           </ul>
