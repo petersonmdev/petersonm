@@ -18742,6 +18742,7 @@ body[data-theme="dark"] .color-secondary {
     #navbarMenuContent.navbar-collapse {
         background: none;
         transition: none!important;
+        border: none!important;
     }
     #navbarMenuContent.navbar-collapse.show {
         overflow: hidden
