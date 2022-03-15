@@ -134,7 +134,7 @@
             </div>
         </section>
 
-      <section class="py-5">
+      <section class="py-5 d-none">
             <div class="container">
               <div class="row flex-center mb-5">
                 <div class="col-lg-8 text-center">

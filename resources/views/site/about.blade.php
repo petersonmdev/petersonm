@@ -7,6 +7,7 @@
             <div class="row align-items-center text-center min-vh-75 my-lg-7">
                 <div class="col-lg-8 offset-lg-2">
                     <h1 class="fw-bold fs-md-3 fs-xl-5 title-small title-exclamation">Sobre mim</h1>
+                    <p class="mx-auto">Página em desenvolvimento!</p>
                 </div>
             </div>
         </div>
