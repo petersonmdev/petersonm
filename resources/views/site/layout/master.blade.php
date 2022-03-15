@@ -207,6 +207,12 @@
               </ul>
             </div>
           </div>
+          <footer class="row text-center pt-3 mt-5 mb-0 pb-0">
+            <div class="w-100">
+              <p class="mx-auto my-0">Desenvolvido por <b>Peterson Macedo</b></p>
+              <p class="mx-auto my-0">Todos direitos reservados &copy; {{ Date("Y") }} Peterson Macedo</p>
+            </div>
+          </footer>
           <div class="row text-center d-mb-none d-lg-none d-block pt-3">
             <div class="w-100 ">
               <ul class="list-unstyled list-inline">
@@ -275,7 +281,16 @@
         $('.loader').addClass('complete');
       })
     </script>
+    
+
+    
     <script src="{{ asset('site/assets/js/theme.js') }}"></script>
+    <?php
+    if ( Request::url() === route('site.home') ) : ?>
+      <script type="text/javascript">
+        consoleText(['Web develeper.', 'Desinger UX/UI.', 'Designer.'], 'text');
+      </script>
+    <?php endif; ?>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
   </body>

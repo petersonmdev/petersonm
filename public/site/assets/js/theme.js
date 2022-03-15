@@ -574,8 +574,6 @@ function toggleDarkModeMobile() {
   }
 }
 
-consoleText(['Web develeper.', 'Desinger UX/UI.', 'Designer.'], 'text');
-
 function consoleText(words, id, colors) {
   var visible = true;
   var con = document.getElementById('console');
