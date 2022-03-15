@@ -18740,7 +18740,6 @@ body[data-theme="dark"] .color-secondary {
 
 @media screen and (max-width: 991px) {
     #navbarMenuContent.navbar-collapse {
-        z-index: -1;
         background: none;
         transition: none!important;
     }
