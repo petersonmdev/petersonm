@@ -43,8 +43,7 @@
         <div orientation="right" class="side_linkrapido d-none d-mb-block d-lg-block">
           <ul class="social_link">
             <li class="d-block">
-
-              <button id="toggleDarkMode" type="button" class="btn btn-toggle btn-acessibility lh-1 fs-1" onclick="toggleDarkMode()">
+              <button id="toggleDarkMode" type="button" class="btn btn-toggle btn-acessibility lh-1 fs-1 pb-3 mb-3" onclick="toggleDarkMode()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
                   <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
                 </svg>
@@ -52,13 +51,8 @@
                   <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
                 </svg>
               </button>
-
-              <a href="#" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer" class="btn-acessibility pb-3 mb-3">
-
-              </a>
             </li>
             <li class="d-flex">
-              <!-- <a href="#" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer">Peterson Macedo &copy;</a> -->
               <a href="mailto:contato@petersonmacedo.com.br" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer">
                 contato@petersonmacedo.com.br
               </a>
@@ -92,8 +86,8 @@
               <p class="fs-1 lh-base">Tenho <?php echo $interval->format( '%Y' ); ?> e trabalho como <span class="fw-bold">full stack web developer.</span> À cerca de <?php echo (Date('Y') - 2014)?> anos ajudo pequenas empresas e agências a dar vida às suas ideias, criando <span class="fw-bold">sites, e-commerces, blogs, landing pages e sistemas web.</span> - tudo dentro do prazo e orçamento.</p>
               <code class="devtag d-block w-100 text-end fw-bold mb-4">&lt;/about me&gt;</code>
               <!-- <p class="mt-4 mb-5 fs-1 lh-base">Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente: PHP, Laravel, Yii, Git, HTML5, CSS3, Bootstrap 5, Jquery, Webpack, Threejs, Wordpress theme, Woocommerce, Woocommerce Checkout, payment method integration.</p> -->
-              <a class="btn btn-lg btn-primary hover-top my-2 w-sm-auto w-100" href="#" role="button">Diga um oi</a>
-              <a class="btn btn-lg btn-outline-primary hover-top my-2 w-sm-auto w-100" href="#" role="button">Me conheça melhor</a>
+              <a class="btn btn-lg btn-primary hover-top my-2 w-sm-auto w-100" href="https://api.whatsapp.com/send?phone=5562985261191&text=Ol%C3%A1%20Peterson!%20Poderia%20me%20ajudar%3F" role="button">Diga um oi</a>
+              <a class="btn btn-lg btn-outline-primary hover-top my-2 w-sm-auto w-100" href="{{ route('site.about') }}" role="button">Me conheça melhor</a>
             </div>
           </div>
         </div>
@@ -106,10 +100,10 @@
                         <div class="about-caption mb-50">
                             <h3 class="fw-bold pb-3 title-small animate__animated animate__bounce">Um pouco sobre mim e meu trabalho</h3>
                             <code class="devtag d-block w-100 text-start fw-bold mb-3">&lt;about me&gt;</code>
-                            <p class="">Sou graduado em Redes de computadores pela Universidade Estadual de Goiás, e me especializei em desenvolvimento web, atuo na criação de <span class="fw-bold">sites, e-commerces, blogs, landing pages e sistemas web </span>(e ocasionalmente faço alguns trabalhos como design gráfico).</p>
-                            <p class="">Tenho paixão pelo que faço. A cada projeto um novo desafio.</p>
-                            <p class="">Você tem algum projeto? Vamos tira-lo do papel? </p>
-                            <a class="btn btn-lg btn-outline-primary hover-top my-2 w-sm-auto w-100 " href="#" role="button">Meu perfil completo</a>
+                            <p>Sou graduado em Redes de computadores pela Universidade Estadual de Goiás, e me especializei em desenvolvimento web, atuo na criação de <span class="fw-bold">sites, e-commerces, blogs, landing pages e sistemas web </span>(e ocasionalmente faço alguns trabalhos como design gráfico).</p>
+                            <p>Tenho paixão pelo que faço. A cada projeto um novo desafio.</p>
+                            <p>Você tem algum projeto? Vamos tira-lo do papel? </p>
+                            <a class="btn btn-lg btn-outline-primary hover-top my-2 w-sm-auto w-100 " href="{{ route('site.about') }}" role="button">Meu perfil completo</a>
                             <code class="devtag d-block w-100 text-end fw-bold mb-4 ">&lt;/about me&gt;</code>
                         </div>
                     </div>
