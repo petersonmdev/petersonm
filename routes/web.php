@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfoUserController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ResetController;
+use App\Http\Controllers\SessionsController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,36 +22,72 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Auth::routes();
+//Auth::routes();
 
-// Route::get('/', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
 
-// Route::get('/app', 'AuthController@dashboard')->name('app.home');
+    Route::get('/', [HomeController::class, 'home']);
+    Route::get('app', function () {
+        return view('dashboard.home');
+    })->name('dashboard.home');
+
+	Route::get('billing', function () {
+		return view('dashboard.billing');
+	})->name('billing');
+
+	Route::get('profile', function () {
+		return view('dashboard.profile');
+	})->name('profile');
+
+	Route::get('rtl', function () {
+		return view('dashboard.rtl');
+	})->name('rtl');
+
+	Route::get('user-management', function () {
+		return view('dashboard.laravel-examples.user-management');
+	})->name('user-management');
+
+	Route::get('tables', function () {
+		return view('dashboard.tables');
+	})->name('tables');
+
+    Route::get('virtual-reality', function () {
+		return view('dashboard.virtual-reality');
+	})->name('virtual-reality');
+
+    Route::get('static-sign-in', function () {
+		return view('dashboard.static-sign-in');
+	})->name('sign-in');
+
+    Route::get('static-sign-up', function () {
+		return view('dashboard.static-sign-up');
+	})->name('sign-up');
+
+    Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::get('/user-profile', [InfoUserController::class, 'create']);
+	Route::post('/user-profile', [InfoUserController::class, 'store']);
+    Route::get('/login', function () {
+		return view('dashboard.home');
+	})->name('sign-up');
+});
 
 
-// Route::get('listagem-usuarios', 'UserController@listUser');
 
-// Route::group(['namespace'=> 'Form'], function() {
-//     // VERBO GET
-//     Route::get('usuarios', 'TestController@listAllUser')->name('users.listAll');
-//     Route::get('usuarios/novo', 'TestController@formAddUser')->name('users.formAddUser');
-//     Route::get('usuarios/editar/{user}', 'TestController@formEditUser')->name('users.formEditUser');
-//     Route::get('usuarios/{user}', 'TestController@listUser')->name('users.list');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/register', [RegisterController::class, 'create']);
+    Route::post('/register', [RegisterController::class, 'store']);
+    Route::get('/login', [SessionsController::class, 'create']);
+    Route::post('/session', [SessionsController::class, 'store']);
+	Route::get('/login/forgot-password', [ResetController::class, 'create']);
+	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
+	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
+	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
+});
 
-//     // VERBO POST
-//     Route::post('usuarios/store', 'TestController@storeUser')->name('users.store');
-
-
-//     // VERBO PUT/PATCH
-//     Route::patch('usuarios/edit/{user}', 'TestController@edit')->name('users.edit');
-
-
-//     // VERBO DELETE
-//     Route::delete('usuarios/destroy/{user}', 'TestController@destroy')->name('users.destroy');
-
-// });
-Auth::routes();
+Route::get('/login', function () {
+    return view('session/login-session');
+})->name('login');
 
 Route::get('/', function() {
     return view('site.home');
@@ -65,12 +109,12 @@ Route::get('/contato', function() {
     return view('site.contact');
 })->name('site.contact');
 
-Route::get('/termo-e-condicoes', function() { 
+Route::get('/termo-e-condicoes', function() {
     return view('site.terms');
 })->name('site.terms');
-Route::get('/politica-de-privacidade', function() { 
+
+Route::get('/politica-de-privacidade', function() {
     return view('site.privacy');
 })->name('site.privacy');
 
-// Route::get('/', 'HomeController@index')->name('site.home');
-Route::get('/app', 'AuthController@index')->name('dashboard.home');
+//Route::get('/app', [\App\Http\Controllers\AuthController::class, 'index'])->name('dashboard.home');

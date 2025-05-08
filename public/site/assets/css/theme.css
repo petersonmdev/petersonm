@@ -5109,7 +5109,8 @@ body[data-theme="dark"] .nav-tabs .nav-link {
     transition: -webkit-box-shadow 0.15s ease-in-out;
     -o-transition: box-shadow 0.15s ease-in-out;
     transition: box-shadow 0.15s ease-in-out;
-    transition: box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: box-shadow
+    
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5144,6 +5145,11 @@ body[data-theme="dark"] .nav-tabs .nav-link {
 .navbar-nav-scroll {
     max-height: var(--bs-scroll-height, 75vh);
     overflow-y: auto;
+}
+
+#navbarMenuContent .user-name {
+    line-height: 1;
+    padding: 10px 0;
 }
 
 @media (min-width: 576px) {
@@ -19256,7 +19262,7 @@ ol.carousel-indicators li.active {
     display: inline;
     transition: 0.5s ease;
 }
-  
+
 .single-services:hover .title-description h5 {
     background-size: 100%;
     cursor: pointer;

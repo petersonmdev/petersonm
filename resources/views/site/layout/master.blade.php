@@ -183,10 +183,28 @@
                 </a>
               </p>
             </div>
-            <div class="btn-nav ms-5">
-              <a href="{{ route('dashboard.home') }}" class="btn btn-lg btn-outline-primary d-none d-mb-inline-block d-lg-inline-block" type="submit">Acesso cliente</a>
+            @if (Auth::check())
+                  <div class="btn-nav ms-5 mb-0">
+                      <div class="d-flex">
+                          <div class="user-name text-end me-3">
+                              <p class="mb-0">{{ Auth::user()->name }}</p>
+                              <a href="{{ route('dashboard.home') }}" class="text-decoration-none color-primary"><small>Acessar dashboard</small></a>
+                          </div>
+                          <div class="user-img d-flex align-items-center">
+                              <div class="avatar avatar-md">
+                                  <img class="rounded-circle" width="40" height="40" src="{{ asset('dashboard/assets/images/faces/1.jpg') }}">
+                              </div>
+                          </div>
+                          <!--<span class="d-block color-primary"><strong>nome</strong><br><small>Acessar dashboard</small></span>-->
+                      </div>
+                  </div>
+            @else
+              <div class="btn-nav ms-5">
+                <a href="{{ route('dashboard.home') }}" class="btn btn-lg btn-outline-primary d-none d-mb-inline-block d-lg-inline-block">Acesso cliente</a>
+              </div>
+            @endif
             </div>
-            
+
           </div>
         </div>
       </nav>
@@ -281,9 +299,9 @@
         $('.loader').addClass('complete');
       })
     </script>
-    
 
-    
+
+
     <script src="{{ asset('site/assets/js/theme.js') }}"></script>
     <?php
     if ( Request::url() === route('site.home') ) : ?>
