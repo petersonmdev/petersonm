@@ -1,25 +1,6 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.3
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 
-@if (\Request::is('rtl'))
-  <html dir="rtl" lang="ar">
-@else
-  <html lang="en" >
-@endif
+<html lang="pt-BR" >
 
 <head>
   <meta charset="utf-8" />
@@ -29,11 +10,18 @@
       <x-demo-metas></x-demo-metas>
   @endif
 
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <title>
-    Soft UI Dashboard by Creative Tim
-  </title>
+  <title>{{ ucfirst(substr(strrchr(Route::current()->getName(), '.') ?: Route::current()->getName(), strrchr(Route::current()->getName(), '.') ? 1 : 0)) . ' | ' . config('app.name', 'Laravel') }}</title>
+
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('site/assets/img/favicons/apple-touch-icon.png.js') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('site/assets/img/favicons/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('site/assets/img/favicons/favicon-16x16.png') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('site/assets/img/favicons/favicon.ico') }}">
+  <link rel="manifest" href="{{ asset('site/assets/img/favicons/manifest.json') }}">
+  <meta name="msapplication-TileImage" content="{{ asset('site/assets/img/favicons/mstile-150x150.png') }}">
+
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->

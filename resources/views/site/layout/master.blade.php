@@ -9,10 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ ucfirst(substr(strrchr(Route::current()->getName(), '.') ?: Route::current()->getName(), strrchr(Route::current()->getName(), '.') ? 1 : 0)) . ' | ' . config('app.name', 'Laravel') }}</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
