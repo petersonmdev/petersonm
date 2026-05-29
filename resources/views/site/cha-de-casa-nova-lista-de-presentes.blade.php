@@ -157,10 +157,6 @@ $whatsNumber = '556293625728';
     <p class="pg-eyebrow">Lista oficial</p>
     <h1 class="pg-title">Escolha um <em>presente</em></h1>
     <p class="pg-desc">Selecionamos algumas sugestões para quem quiser nos ajudar a montar nosso lar. Se preferir, também aceitamos PIX.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:.8rem">
-      <a href="{{ route('site.cha-de-casa-nova-confirmacao') }}" class="btn-amarelo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Confirmar Presença</a>
-      <a href="{{ route('site.cha-de-casa-nova-obrigado') }}" class="btn-ghost"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Ver Confirmados</a>
-    </div>
   </div>
 </div>
 
