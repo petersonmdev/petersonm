@@ -23,7 +23,7 @@
 .chip.gold{background:rgba(245,196,0,.08);border-color:rgba(245,196,0,.2);color:var(--amarelo)}
 
 .right-panel{position:relative;z-index:1;padding:5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--border-dim);overflow-y:auto}
-.form-head{margin-bottom:2.5rem}
+.form-head{margin-bottom:2.5rem;margin-top:1rem}
 .form-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:.04em;color:var(--branco);margin-bottom:.4rem}
 .form-title em{font-style:normal;color:var(--amarelo)}
 .form-desc{font-size:.9rem;font-weight:300;color:var(--muted);line-height:1.7}
