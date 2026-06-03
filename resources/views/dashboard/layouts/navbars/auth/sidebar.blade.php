@@ -31,11 +31,11 @@
   <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item pb-2">
-        <a class="nav-link {{ (Request::is('cha-de-casa-nova/convidados') ? 'active' : '') }}" href="{{ route('dashboard.cha-de-casa-nova-convidados') }}">
+        <a class="nav-link {{ (Request::is('app/eventos*') ? 'active' : '') }}" href="{{ route('dashboard.eventos.index') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-house-user ps-2 pe-2 text-center text-dark {{ (Request::is('cha-de-casa-nova/convidados') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            <i style="font-size: 1rem;" class="fas fa-lg fa-calendar-alt ps-2 pe-2 text-center text-dark {{ (Request::is('app/eventos*') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
-            <span class="nav-link-text ms-1">Cha de Casa Nova</span>
+            <span class="nav-link-text ms-1">Eventos</span>
         </a>
       </li>
     </ul>

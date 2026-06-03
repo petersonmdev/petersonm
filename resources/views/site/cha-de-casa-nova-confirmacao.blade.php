@@ -91,7 +91,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('site.cha-de-casa-nova-confirmacao.store') }}">
+    <form method="POST" action="{{ route('site.eventos.confirmacao.store', $event) }}">
             @csrf
       <div class="field">
         <label for="full_name">Nome completo</label>
@@ -124,8 +124,8 @@
       </button>
     </form>
     <p class="form-footer">
-      Já confirmou? <a href="{{ route('site.cha-de-casa-nova-obrigado') }}">Ver lista de confirmados →</a><br>
-      Quer dar um presente? <a href="{{ route('site.cha-de-casa-nova-lista-de-presentes') }}">Ver sugestões →</a>
+      Já confirmou? <a href="{{ route('site.eventos.obrigado', $event) }}">Ver lista de confirmados →</a><br>
+      Quer dar um presente? <a href="{{ route('site.eventos.presentes', $event) }}">Ver sugestões →</a>
     </p>
   </div>
 </div>

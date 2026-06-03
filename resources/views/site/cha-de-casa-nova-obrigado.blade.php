@@ -72,8 +72,8 @@
     <span>O <strong>endereço</strong> será enviado em breve. Fique de olho!</span>
   </div>
   <div class="ty-ctas">
-    <a href="{{ route('site.cha-de-casa-nova-lista-de-presentes') }}" class="btn-amarelo">Lista de Presentes</a>
-    <a href="{{ route('site.cha-de-casa-nova') }}" class="btn-ghost">Página Inicial</a>
+    <a href="{{ route('site.eventos.presentes', $event) }}" class="btn-amarelo">Lista de Presentes</a>
+    <a href="{{ route('site.eventos.landing', $event) }}" class="btn-ghost">Página Inicial</a>
   </div>
 </div>
 
@@ -114,7 +114,7 @@
 </div>
 
 <div class="cta-bar">
-  <a href="{{ route('site.cha-de-casa-nova-lista-de-presentes') }}" class="btn-amarelo">Ver Lista de Presentes</a>
+  <a href="{{ route('site.eventos.presentes', $event) }}" class="btn-amarelo">Ver Lista de Presentes</a>
 </div>
 
 @if(session('success'))

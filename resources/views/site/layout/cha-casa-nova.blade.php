@@ -137,34 +137,34 @@ body::after{
 
 {{-- ── NAVBAR ── --}}
 <nav class="nav">
-    <a href="{{ route('site.cha-de-casa-nova') }}" class="nav-brand">Peterson &amp; Amanda</a>
+  <a href="{{ route('site.eventos.landing', $event) }}" class="nav-brand">{{ $event->name }}</a>
     <ul class="nav-links">
         <li>
-            <a href="{{ route('site.cha-de-casa-nova') }}"
-             @if(request()->routeIs('site.cha-de-casa-nova')) class="on" @endif>
+      <a href="{{ route('site.eventos.landing', $event) }}"
+       @if(request()->routeIs('site.eventos.landing')) class="on" @endif>
                 Início
             </a>
         </li>
         <li>
-            <a href="{{ route('site.cha-de-casa-nova-confirmacao') }}"
-             @if(request()->routeIs('site.cha-de-casa-nova-confirmacao')) class="on" @endif>
+      <a href="{{ route('site.eventos.confirmacao', $event) }}"
+       @if(request()->routeIs('site.eventos.confirmacao')) class="on" @endif>
                 Confirmar
             </a>
         </li>
         <li>
-            <a href="{{ route('site.cha-de-casa-nova-obrigado') }}"
-             @if(request()->routeIs('site.cha-de-casa-nova-obrigado')) class="on" @endif>
+      <a href="{{ route('site.eventos.obrigado', $event) }}"
+       @if(request()->routeIs('site.eventos.obrigado')) class="on" @endif>
                 Confirmados
             </a>
         </li>
         <li>
-            <a href="{{ route('site.cha-de-casa-nova-lista-de-presentes') }}"
-             @if(request()->routeIs('site.cha-de-casa-nova-lista-de-presentes')) class="on" @endif>
+      <a href="{{ route('site.eventos.presentes', $event) }}"
+       @if(request()->routeIs('site.eventos.presentes')) class="on" @endif>
                 Lista de presentes
             </a>
         </li>
     </ul>
-    <a href="{{ route('site.cha-de-casa-nova-confirmacao') }}" class="nav-btn">Confirmar Presença</a>
+  <a href="{{ route('site.eventos.confirmacao', $event) }}" class="nav-btn">Confirmar Presença</a>
 </nav>
 
 {{-- ── CONTEÚDO DA VIEW ── --}}

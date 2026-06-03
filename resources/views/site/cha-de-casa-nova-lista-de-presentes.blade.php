@@ -83,73 +83,7 @@
 @section('content')
 
 @php
-$presentesJson = <<<'JSON'
-[
-  {"nome":"Geladeira French Door 3 Portas","descricao":"O sonho de consumo de todo casal! Espaço para tudo: as compras do mês, as sobras do jantar, a tortinha da sogra e ainda aquela garrafa de vinho gelando para o fim de semana. A geladeira que a casa nova merece!","categoria":"Eletrodomésticos","recebido":true,"presenteado_por":"Alex, Gustavo, Gracyelle, Heloysa, Itallo, Juliano, Kethlen, Leidiane e Luiz"},
-  {"nome":"Máquina de Lavar 13Kg","descricao":"Porque lavar roupa à mão é coisa do passado! Com 13kg de capacidade, dá pra resolver a roupa da semana toda de uma vez e ainda sobrar tempo para o que realmente importa: curtir a vida a dois!","categoria":"Eletrodomésticos","recebido":true,"presenteado_por":"Gleice e Pablo"},
-  {"nome":"Fogão Cooktop 5 Bocas","descricao":"Cinco bocas para cozinhar tudo ao mesmo tempo! Porque na vida a dois, a cozinha vira palco e o casal que cozinha junto, fica junto. Aqui não tem desculpa para pedir delivery!","categoria":"Eletrodomésticos","recebido":true,"presenteado_por":"Karita e Remolo"},
-  {"nome":"Air Fryer","descricao":"Porque amor é lindo, mas batata frita sem culpa é melhor ainda. Com essa air fryer, a vida a dois fica muito mais gostosa!","categoria":"Eletrodomésticos"},
-  {"nome":"Panela Elétrica","descricao":"Para o arroz não queimar enquanto os dois estão distraídos um com o outro. Praticidade é o tempero do relacionamento!","categoria":"Eletrodomésticos"},
-  {"nome":"Panela de Pressão Elétrica","descricao":"Feijão pronto em minutos! Porque o casal tem coisa mais importante pra fazer do que ficar na cozinha o dia todo.","categoria":"Eletrodomésticos"},
-  {"nome":"Panela de Pressão","descricao":"A panela de pressão de todo lar que se preza. Para o feijão, para a carne e para aquele almoço de domingo que vai reunir todo mundo.","categoria":"Cozinha"},
-  {"nome":"Jogo de Panelas Antiaderente","descricao":"Para nada grudar, nem na panela e nem no relacionamento. O kit perfeito para a cozinha dos dois!","categoria":"Cozinha"},
-  {"nome":"Jogo de Frigideiras Antiaderente","descricao":"Ovos mexidos no café da manhã, jantar romântico na sexta... as frigideiras certas fazem toda a diferença na vida a dois.","categoria":"Cozinha"},
-  {"nome":"Tábua de Corte","descricao":"O item que parece simples mas salva qualquer cozinha! Para picar, cortar e preparar tudo com segurança. Nenhuma bancada merece ser maltratada.","categoria":"Cozinha"},
-  {"nome":"Escorredor de Macarrão","descricao":"Porque macarrão ao molho é programa de casal e ninguém merece perder o macarrão pelo ralo. Um clássico indispensável!","categoria":"Cozinha"},
-  {"nome":"Suporte para Temperos","descricao":"Para a cozinha ter aquele charme de chef! Organiza os temperos, decora a bancada e ainda evita aquela pilha de potinhos espalhados.","categoria":"Cozinha"},
-  {"nome":"Lixeira com Pedal","descricao":"Detalhe que faz toda a diferença no dia a dia! Prática, higiênica e essencial para manter a cozinha organizada sem precisar usar as mãos.","categoria":"Organização"},
-  {"nome":"Jogo de Jantar","descricao":"Para impressionar nas visitas, nas jantinhas a dois e em tudo mais. Um belo aparelho de jantar é o começo de muitas histórias à mesa!","categoria":"Mesa Posta"},
-  {"nome":"Jogo de Taças","descricao":"Todo lar novo merece um brinde! Essas taças vão estar presentes nas comemorações, nas sextas à noite e em todos os momentos especiais do casal.","categoria":"Mesa Posta"},
-  {"nome":"Jogo de Xícaras","descricao":"Para o café da manhã juntinhos, aquele chazinho à tarde e as conversas que não têm hora para acabar. O começo do dia fica muito melhor assim!","categoria":"Mesa Posta"},
-  {"nome":"Jogo de Bowls","descricao":"Para a salada, o caldo, o açaí de domingo e tudo mais. Versáteis e charmosos, esses bowls vão aparecer em todo cardápio do casal!","categoria":"Mesa Posta"},
-  {"nome":"Abridor de Vinho","descricao":"Porque toda sexta-feira merece uma garrafinha. O presentinho pequeno que vai ser lembrado em cada taça aberta com amor!","categoria":"Mesa Posta"},
-  {"nome":"Jogo de Facas","descricao":"Porque uma boa faca resolve qualquer situação na cozinha! O presente que parece simples, mas que o casal vai agradecer toda vez que cozinhar.","categoria":"Cozinha"},
-  {"nome":"Jogo de Travessas de Vidro","descricao":"Para guardar as sobras do jantar, organizar a geladeira e ainda servir aquela salada bonita pra visita. Clássico e indispensável!","categoria":"Cozinha"},
-  {"nome":"Jogo de Talheres","descricao":"Nada de comer com talher emprestado! Com esse conjunto, a mesa do casal fica completa e pronta para receber todo mundo.","categoria":"Mesa Posta"},
-  {"nome":"Jogo de Assadeiras","descricao":"Para o bolo de domingo, o frango assado da semana e as receitas que os dois vão descobrir juntos. Porque cozinhar a dois é um programa e tanto!","categoria":"Cozinha"},
-  {"nome":"Cafeteira","descricao":"O primeiro café na casa nova é sagrado. Presenteie o casal com muitas manhãs gostosas com esse presente que aquece o coração (e a xícara)!","categoria":"Eletrodomésticos"},
-  {"nome":"Multiprocessador de Alimentos","descricao":"Para picar, fatiar e processar tudo em segundos. Porque o tempo que sobra na cozinha pode ser aproveitado muito melhor a dois!","categoria":"Eletrodomésticos"},
-  {"nome":"Sanduicheira Preta","descricao":"Para os lanches da madrugada, o café da manhã preguiçoso de sábado e tudo mais. O presentinho pequeno que vai ser usado todo dia!","categoria":"Eletrodomésticos"},
-  {"nome":"Bebedouro de Água","descricao":"Água gelada, natural ou quentinha para o chá. Porque hidratação também é cuidado, e cuidar um do outro começa em casa!","categoria":"Eletrodomésticos"},
-  {"nome":"Potes Herméticos (Tupperware)","descricao":"Para organizar a geladeira, guardar as sobras e manter tudo no lugar. Porque um lar organizado é um lar feliz!","categoria":"Cozinha"},
-  {"nome":"Micro-ondas","descricao":"Para esquentar a comida, descongelar a carne que esqueceu de tirar do freezer e salvar o jantar nos dias corridos. Essencial na vida a dois!","categoria":"Eletrodomésticos"},
-  {"nome":"Forno Elétrico","descricao":"Para as pizzas caseiras, os bolos de aniversário e os assados de fim de semana. O forno que vai transformar a cozinha deles num espaço ainda mais especial.","categoria":"Eletrodomésticos"},
-  {"nome":"Aspirador de Pó","descricao":"Porque a casa nova precisa ficar sempre linda! E cá entre nós, ninguém quer passar o fim de semana de vassourinha na mão quando dá pra resolver em minutos.","categoria":"Limpeza"},
-  {"nome":"Ferro de Passar Roupa","descricao":"Para a roupa do trabalho, para o look do date e para aquela camisa que amassou na mala. Um presente discreto que o casal vai usar pra sempre!","categoria":"Limpeza"},
-  {"nome":"Varal de Chão","descricao":"O herói silencioso de todo lar! Para os dias de chuva, as peças delicadas e tudo que não pode ir pra secadora. Simples e indispensável.","categoria":"Limpeza"},
-  {"nome":"Kit de Limpeza","descricao":"Rodo, vassoura, balde e esfregão. Não é o presente mais glamouroso, mas é o mais honesto! Porque casa nova também precisa de uma boa faxina.","categoria":"Limpeza"},
-  {"nome":"Cesto de Roupa Suja","descricao":"Para acabar de vez com a roupa jogada na cadeira! Um cesto bonito e prático que vai deixar o quarto organizado e evitar aquele atrito clássico do casal.","categoria":"Organização"},
-  {"nome":"Jogo de Cama King","descricao":"Porque dormir bem juntinho é o começo de tudo! Um jogo de cama confortável e bonito é o presente que o casal vai adorar todo dia.","categoria":"Cama e Banho"},
-  {"nome":"Jogo de Toalhas","descricao":"Para o banheiro ficar cheiroso, aconchegante e com aquele toque especial. Todo casal merece se enrolar numa toalha macia depois de um longo dia!","categoria":"Cama e Banho"},
-  {"nome":"Jogo de Tapetes de Banheiro","descricao":"Para o banheiro ganhar personalidade e aquele toque acolhedor. Pisarão neles todo dia, com certeza com um sorriso no rosto!","categoria":"Cama e Banho"},
-  {"nome":"Acessórios de Banheiro","descricao":"Saboneteira, porta-escovas, porta-shampoo... os detalhes que transformam um banheiro comum num espacinho com a cara do casal!","categoria":"Cama e Banho"},
-  {"nome":"Almofadas Decorativas","descricao":"Para o sofá ficar com aquele charme de revista! Conforto, cor e personalidade para a sala onde os dois vão relaxar juntos.","categoria":"Decoração"},
-  {"nome":"Quadros Decorativos","descricao":"Para as paredes não ficarem em branco na casa nova! Uma arte bonita transforma qualquer ambiente e conta um pouco da história do casal.","categoria":"Decoração"},
-  {"nome":"Luminária de Cabeceira","descricao":"Para a leitura antes de dormir, para o clima mais intimista e para não ter que levantar até o interruptor. Um detalhezinho que muda tudo!","categoria":"Decoração"},
-  {"nome":"Manta para Sofá","descricao":"Para as noites de filme, as tardes frias e os abraços no sofá. O presente mais aconchegante da lista, com certeza!","categoria":"Decoração"},
-  {"nome":"Caixa de Ferramentas","descricao":"Martelo, chave de fenda, fita métrica... o presente que ninguém pensa em dar, mas que vai ser o primeiro a ser procurado na casa nova. Herói absoluto!","categoria":"Utilidades"},
-  {"nome":"Régua de Extensão","descricao":"Porque tomada nunca é suficiente! Esse presentinho resolve qualquer pepino elétrico e vai ser usado desde o primeiro dia na casa nova.","categoria":"Utilidades"},
-  {"nome":"Kit de Primeiros Socorros","descricao":"Torcicolos, um cortezinho na cozinha, dor de cabeça... o kit de primeiros socorros é aquele presente que demonstra cuidado de verdade com o casal!","categoria":"Utilidades"},
-  {"nome":"Mesa de Jantar 6 Lugares","descricao":"O lugar onde as histórias vão ser contadas, os amigos vão se reunir e as refeições vão virar memórias. Um presente para a vida toda!","categoria":"Móveis"},
-  {"nome":"Lava-Louças","descricao":"Acabou a briga de casal sobre quem lava a louça! Esse é o presente que traz paz, harmonia e muito mais tempo de qualidade para os dois. (consultar especificações de tamanho)","categoria":"Eletrodomésticos"}
-]
-JSON;
-
-$presentes = collect(json_decode($presentesJson, true) ?: [])->map(function ($item) {
-  $categoria = $item['categoria'] ?? 'Outros';
-
-  return [
-    'nome' => $item['nome'] ?? '',
-    'descricao' => $item['descricao'] ?? '',
-    'categoria' => $categoria,
-    'categoria_slug' => \Illuminate\Support\Str::slug($categoria),
-    'recebido' => (bool) ($item['recebido'] ?? false),
-    'presenteado_por' => $item['presenteado_por'] ?? null,
-  ];
-})->values();
-
-$categorias = $presentes->pluck('categoria')->unique()->values();
-$whatsNumber = '556293625728';
+  $event = $event ?? null;
 @endphp
 
 <div class="page-header">
@@ -162,7 +96,7 @@ $whatsNumber = '556293625728';
 
 <div class="filter-bar">
   <span class="filter-lbl">Filtrar:</span>
-  <button class="f-btn on" data-f="all">Todos · {{ count($presentes) }}</button>
+  <button class="f-btn on" data-f="all">Todos · {{ $presentes->count() }}</button>
   @foreach($categorias as $categoria)
     <button class="f-btn" data-f="{{ \Illuminate\Support\Str::slug($categoria) }}">{{ $categoria }}</button>
   @endforeach
@@ -171,29 +105,29 @@ $whatsNumber = '556293625728';
 <div class="gifts-wrap">
   <div class="gifts-grid" id="grid">
     @forelse($presentes as $presente)
-        <div class="gift-card {{ $presente['recebido'] ? 'received' : '' }}" data-cat="{{ $presente['categoria_slug'] }}">
+        <div class="gift-card {{ $presente->received ? 'received' : '' }}" data-cat="{{ \Illuminate\Support\Str::slug($presente->category) }}">
             <div class="gift-body">
-                <span class="gift-cat">{{ $presente['categoria'] }}</span>
-                <h3 class="gift-name">{{ $presente['nome'] }}</h3>
-              @if($presente['recebido'])
+                <span class="gift-cat">{{ $presente->category }}</span>
+                <h3 class="gift-name">{{ $presente->name }}</h3>
+              @if($presente->received)
                 <div class="gift-received-badge">
                   <span class="gift-received-label">Presente ja ganho</span>
-                  @if($presente['presenteado_por'])
-                    <span class="gift-received-by">Presenteado por: {{ $presente['presenteado_por'] }}</span>
+                  @if($presente->gifted_by)
+                    <span class="gift-received-by">Presenteado por: {{ $presente->gifted_by }}</span>
                   @endif
                 </div>
               @endif
-              @if($presente['categoria_slug'] === 'eletrodomesticos' && !$presente['recebido'])
+              @if(\Illuminate\Support\Str::slug($presente->category) === 'eletrodomesticos' && !$presente->received)
                 <span class="gift-note">Cor preferencial: Preto ou Inox</span>
               @endif
-                <p class="gift-desc">{{ $presente['descricao'] }}</p>
+                <p class="gift-desc">{{ $presente->description }}</p>
                 <div class="gift-foot">
-                  @if($presente['recebido'])
+                  @if($presente->received)
                     <span class="text-success text-xs font-weight-bold">Item indisponivel para presentear.</span>
                   @else
                     @php
-                      $msgPresente = rawurlencode("Oi! Quero presentear vocês com o {$presente['nome']}.\n\nPodem me passar os detalhes?");
-                      $msgPix = rawurlencode("Oi! Prefiro fazer um pix para presentear vocês com o {$presente['nome']}.\n\nPodem me enviar a chave?");
+                      $msgPresente = rawurlencode("Oi! Quero presentear vocês com o {$presente->name}.\n\nPodem me passar os detalhes?");
+                      $msgPix = rawurlencode("Oi! Prefiro fazer um pix para presentear vocês com o {$presente->name}.\n\nPodem me enviar a chave?");
                     @endphp
                     <div class="gift-actions">
                       <a href="https://wa.me/{{ $whatsNumber }}?text={{ $msgPresente }}" target="_blank" rel="noopener" class="btn-gift">
@@ -221,8 +155,8 @@ $whatsNumber = '556293625728';
   <h2 class="cta-foot-title">Sua presença é o<br><em>maior presente</em></h2>
   <p>Mas se quiser ajudar a montar nosso lar, ficamos muito felizes com qualquer gesto de carinho!</p>
   <div class="cta-btns">
-    <a href="{{ route('site.cha-de-casa-nova-confirmacao') }}" class="btn-amarelo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Confirmar Presença</a>
-    <a href="{{ route('site.cha-de-casa-nova') }}" class="btn-ghost"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Início</a>
+    <a href="{{ route('site.eventos.confirmacao', $event) }}" class="btn-amarelo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Confirmar Presença</a>
+    <a href="{{ route('site.eventos.landing', $event) }}" class="btn-ghost"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Início</a>
   </div>
 </div>
 

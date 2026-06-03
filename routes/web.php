@@ -3,7 +3,10 @@
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
-use App\Http\Controllers\ChaDeCasaNovaController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventGiftController;
+use App\Http\Controllers\EventGuestController;
+use App\Http\Controllers\EventPublicController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
@@ -52,10 +55,20 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard.tables');
 	})->name('tables');
 
-    Route::get('/cha-de-casa-nova/convidados', [ChaDeCasaNovaController::class, 'dashboard'])
-        ->name('dashboard.cha-de-casa-nova-convidados');
-	Route::delete('/cha-de-casa-nova/convidados/{guest}', [ChaDeCasaNovaController::class, 'destroy'])
-		->name('dashboard.cha-de-casa-nova-convidados.destroy');
+	Route::get('/app/eventos', [EventController::class, 'index'])->name('dashboard.eventos.index');
+	Route::get('/app/eventos/criar', [EventController::class, 'create'])->name('dashboard.eventos.create');
+	Route::post('/app/eventos', [EventController::class, 'store'])->name('dashboard.eventos.store');
+	Route::get('/app/eventos/{event}', [EventController::class, 'show'])->name('dashboard.eventos.show');
+	Route::get('/app/eventos/{event}/editar', [EventController::class, 'edit'])->name('dashboard.eventos.edit');
+	Route::put('/app/eventos/{event}', [EventController::class, 'update'])->name('dashboard.eventos.update');
+	Route::delete('/app/eventos/{event}', [EventController::class, 'destroy'])->name('dashboard.eventos.destroy');
+
+	Route::post('/app/eventos/{event}/convidados', [EventGuestController::class, 'store'])->name('dashboard.eventos.guests.store');
+	Route::delete('/app/eventos/{event}/convidados/{guest}', [EventGuestController::class, 'destroy'])->name('dashboard.eventos.guests.destroy');
+
+	Route::post('/app/eventos/{event}/presentes', [EventGiftController::class, 'store'])->name('dashboard.eventos.gifts.store');
+	Route::put('/app/eventos/{event}/presentes/{gift}', [EventGiftController::class, 'update'])->name('dashboard.eventos.gifts.update');
+	Route::delete('/app/eventos/{event}/presentes/{gift}', [EventGiftController::class, 'destroy'])->name('dashboard.eventos.gifts.destroy');
 
     Route::get('virtual-reality', function () {
 		return view('dashboard.virtual-reality');
@@ -123,18 +136,15 @@ Route::get('/politica-de-privacidade', function() {
     return view('site.privacy');
 })->name('site.privacy');
 
-Route::get('/cha-de-casa-nova', [ChaDeCasaNovaController::class, 'landing'])
-	->name('site.cha-de-casa-nova');
-
-Route::get('/cha-de-casa-nova/confirmacao', [ChaDeCasaNovaController::class, 'confirmationForm'])
-	->name('site.cha-de-casa-nova-confirmacao');
-Route::post('/cha-de-casa-nova/confirmacao', [ChaDeCasaNovaController::class, 'confirm'])
-	->name('site.cha-de-casa-nova-confirmacao.store');
-
-Route::get('/cha-de-casa-nova/obrigado', [ChaDeCasaNovaController::class, 'thanks'])
-	->name('site.cha-de-casa-nova-obrigado');
-
-Route::get('/cha-de-casa-nova/lista-de-presentes', [ChaDeCasaNovaController::class, 'gifts'])
-	->name('site.cha-de-casa-nova-lista-de-presentes');
+Route::get('/eventos/{event:slug}', [EventPublicController::class, 'landing'])
+	->name('site.eventos.landing');
+Route::get('/eventos/{event:slug}/confirmacao', [EventPublicController::class, 'confirmationForm'])
+	->name('site.eventos.confirmacao');
+Route::post('/eventos/{event:slug}/confirmacao', [EventPublicController::class, 'confirm'])
+	->name('site.eventos.confirmacao.store');
+Route::get('/eventos/{event:slug}/obrigado', [EventPublicController::class, 'thanks'])
+	->name('site.eventos.obrigado');
+Route::get('/eventos/{event:slug}/lista-de-presentes', [EventPublicController::class, 'gifts'])
+	->name('site.eventos.presentes');
 
 //Route::get('/app', [\App\Http\Controllers\AuthController::class, 'index'])->name('dashboard.home');
